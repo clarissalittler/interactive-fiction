@@ -467,10 +467,10 @@ Okay, but how do we use them to control how our games play? Well, most of the ti
 
 Like a lot of programming languages the way you make a choice in Twine is to say &quot;if&quot; and then what you&#x27;re testing. So for example if I type
 
-&#x60;(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if &#x60;$thisIsTheName&#x60; is bigger than 1][Here&#x27;s the text that should show up if it isn&#x27;t]&#x60;
+&#x60;(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if $thisIsTheName is bigger than 1](else:)[Here&#x27;s the text that should show up if it isn&#x27;t]&#x60;
 
 what&#x27;ll show up in our passage is:
-{(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if &#x60;$thisIsTheName&#x60; is bigger than 1][Here&#x27;s the text that should show up if it isn&#x27;t]}
+{(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if &#x60;$thisIsTheName&#x60; is bigger than 1](else:)[Here&#x27;s the text that should show up if it isn&#x27;t]}
 
 There&#x27;s a lot more to cover about variables and conditionals, but hopefully that was enough to at least get you started!
 
