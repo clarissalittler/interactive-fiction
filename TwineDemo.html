@@ -17,7 +17,7 @@
 }
 
 tw-passage {
-  background-color: rgba(10,10,0,0.2);
+  background-color: rgba(80,80,80,0.2);
   border: 2px;
   width: 70%;
   padding: 20px;
@@ -35,8 +35,14 @@ tw-passage {
   text-align: right;
   width: 40%;
 }
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Welcome to Twine!" tags="" position="891.6666666666666,241">Welcome to //Twine//!
+
+
+
+</script><tw-passagedata pid="1" name="Welcome to Twine!" tags="" position="891,241">Welcome to //Twine//!
 
 Twine is a tool for building interactive fiction, games, and choose-your-own-adventure stories. You can find Twine at [http://twinery.org]&lt;earl|
 
@@ -44,14 +50,14 @@ The basic building block of Twine is the ability to connect one scene, or //pass
 
 A cool thing about Twine is that ultimately it just creates web pages, which means that once you&#x27;re done with your stories they can be viewed on any device! 
 
-So let&#x27;s look at an example of how to make [[a conversation based game|ConvoGame]] in Twine.
+First, here&#x27;s a simple [[adventure|AdventureGame]] game where you have to walk around a set of caves and solve a tiny puzzle.
 
-If that&#x27;s not your thing, there&#x27;s also a simple [[adventure|AdventureGame]] game where you have to walk around a set of caves.
+Next we have a [[puzzle game|PuzzleGame]] inspired by very loosely by escape rooms, where you need to find clues so you can break the code to the door that&#x27;s trapped you in an odd chicken themed room.
 
-And, finally, we have a [[puzzle game|PuzzleGame]] inspired by very loosely by escape rooms. 
+Finally, we have a conversation based game that&#x27;s centered around texting a friend to get out of a [[dangerous situation|ConvoGame]].
 
 In order to learn more about programming in Twine, you&#x27;ll want to look at
-the Harlowe documentation at [https://twine2.neocities.org]&lt;harlowe| but we also have comments in the source code for each of the games in this tutorial.
+the Harlowe documentation at [https://twine2.neocities.org]&lt;harlowe| but we also have comments in the source code for each of the games in this tutorial and we also have a couple of small tutorials on some of the concepts used in the games themselves [[here|Tutorials]].
 {
 (click: ?earl)[(open-url: &quot;http://twinery.org&quot;)]
 (click: ?harlowe)[(open-url: &quot;https://twine2.neocities.org&quot;)]
@@ -81,7 +87,7 @@ You see, it&#x27;s actually really easy to include straight up HTML into your Tw
 
 Even this entire story was styled with a bit of CSS. If you want to see more about that, then take a look at the menu option that says **Edit Story Stylesheet** from the menu in the lower-left corner of the screen.
 
-Back to the start! [[Welcome to Twine!]] </tw-passagedata><tw-passagedata pid="4" name="ConvoGame" tags="" position="836.0000000000001,599.9999999999999">At the end of the strangest day of your life, you pull out your phone and check your texts:
+Back to the start! [[Welcome to Twine!]] </tw-passagedata><tw-passagedata pid="4" name="ConvoGame" tags="" position="836,599">At the end of the strangest day of your life, you pull out your phone and check your texts:
 
 	[[Uriel]] 5 unread messages
 	[[Sandalphon]] 2 unread messages
@@ -146,7 +152,7 @@ Samael waves back, lackadaisically (colour: red)[Hey yourself]
 $bottleFilled[Since you have a full water bottle, you can [[give|GiveWater]] it to Samael.]
 [[Go back the way you came|AdventureGame]]
 ]
-(set: $notBeenRight to false)</tw-passagedata><tw-passagedata pid="8" name="Tackle" tags="" position="1835,493.6666666666667">You shift your weight onto your back heel and prepare to dash forward and tackle the stranger. Then, suddenly, a very important thought occurs to you:
+(set: $notBeenRight to false)</tw-passagedata><tw-passagedata pid="8" name="Tackle" tags="" position="1735,518">You shift your weight onto your back heel and prepare to dash forward and tackle the stranger. Then, suddenly, a very important thought occurs to you:
 
 (text-style: &quot;bold&quot;)[THEY&#x27;RE MADE OF FIRE AND THIS IS A BAD IDEA!!]
 
@@ -190,7 +196,7 @@ Well, that settles that. [[Time to go get an angel some bottled water.|Adventure
 &lt;!-- So what we&#x27;re doing in this passage, to make the conversation more dynamic, is use the (click:) macro and hooks. So technically a hook is text wrapped up in single brackets like [this text here]. The feature we&#x27;re showing off in this section is the ability to **name** hooks [like this]&lt;hookName| and once you&#x27;ve named a hook you can do cool things with it like change it with the (enchant:) macro or set it to respond to clicks with the (click:) macro.  
 
 Here we&#x27;re controlling the flow of the conversation so that it gets revealed piece by piece by clicking the appropriate phrases. --&gt;
-}</tw-passagedata><tw-passagedata pid="10" name="PuzzleGame" tags="" position="381.66666666666663,190.66666666666666">You&#x27;re in a room, filled to the brim with [[junk and strangely stacked furniture.|TheRoom]]
+}</tw-passagedata><tw-passagedata pid="10" name="PuzzleGame" tags="" position="381,190">You&#x27;re in a room, filled to the brim with [[junk and strangely stacked furniture.|TheRoom]]
 
 There&#x27;s a [[large door|TheDoor]] that appears to be the only way out.
 
@@ -207,7 +213,7 @@ You awkwardly wait a moment staring at the still-blocked exit before Samael real
 
 (colour: &quot;red&quot;)[&quot;Right! Let me just get out of your way&quot;]
 
-[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Sandalphon" tags="" position="344.6666666666667,611.6666666666667">$theirText[Do we have a deal or not?]
+[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Sandalphon" tags="" position="347.3333333333333,676">$theirText[Do we have a deal or not?]
 $theirText[Make your decision]
 
 Well this isn&#x27;t going to be good. Maybe you should figure out a plan before you text this creep back.
@@ -219,7 +225,7 @@ $knowsTheIncantation[[[Write down the exact spell you were taught|IncantationEnd
 (set: $sandalphonUnread to false)
 {
   &lt;!-- The important things happening here are that you&#x27;re controlling whether or not the option to use the spell to sever your contact with the alien intelligence is visible with the variable $sandalphonUnread --&gt;
-}</tw-passagedata><tw-passagedata pid="13" name="Gabriel" tags="" position="710,945.6666666666667">You check your texts from Gabriel, that jerkface:
+}</tw-passagedata><tw-passagedata pid="13" name="Gabriel" tags="" position="710,945">You check your texts from Gabriel, that jerkface:
 
 $theirText[Nice]
 $theirText[Getting yourself suspended for a week? Classic]
@@ -229,7 +235,7 @@ You want to tell them that it&#x27;s not your fault. That something strange is h
 Eh, they probably wouldn&#x27;t listen anyway.
 
 [[Back to contacts|Contacts]]
-(set: $gabrielUnread to false)</tw-passagedata><tw-passagedata pid="14" name="Uriel" tags="" position="1031,900.3333333333334">$theirText[whAT HAPPENED]
+(set: $gabrielUnread to false)</tw-passagedata><tw-passagedata pid="14" name="Uriel" tags="" position="1031,900">$theirText[whAT HAPPENED]
 $theirText[No seriously you went to the bathroom and then there was screaming]
 $theirText[What. Did. You. Do.]
 
@@ -237,50 +243,50 @@ $theirText[What. Did. You. Do.]
 [[Do you deflect?|DontExplain]]
 
 [[Back to contacts|Contacts]]
-(set: $urielUnread to false)</tw-passagedata><tw-passagedata pid="15" name="TheRoom" tags="" position="216.33333333333331,122.66666666666666">There&#x27;s a lot of strange junk in this room as well as [[piles of school desks|ExamineDesks]] arranged in ways that seem geometrically impossible. 
+(set: $urielUnread to false)</tw-passagedata><tw-passagedata pid="15" name="TheRoom" tags="" position="216,122">There&#x27;s a lot of strange junk in this room as well as [[piles of school desks|ExamineDesks]] arranged in ways that seem geometrically impossible. 
 
 Two things jump out at you from the mess: a bunch of [[pencils laying on the floor in an arrow pattern|FindEtchings]] and a [[fluffy chicken|Chicken]], clucking angrily.
 
-At the far end of the room, there&#x27;s the only [[way out|TheDoor]]</tw-passagedata><tw-passagedata pid="16" name="TheDoor" tags="" position="386.66666666666663,2">The door, your only escape, is a large rusted monstrosity with a small [[control panel|ControlPanel]] built into it but no handle or keyhole. 
+At the far end of the room, there&#x27;s the only [[way out|TheDoor]]</tw-passagedata><tw-passagedata pid="16" name="TheDoor" tags="" position="386,2">The door, your only escape, is a large rusted monstrosity with a small [[control panel|ControlPanel]] built into it but no handle or keyhole. 
 
-[[Go back to looking around the room|TheRoom]]</tw-passagedata><tw-passagedata pid="17" name="Unlock" tags="" position="977,47.66666666666667">The door unlocks and swings open slowly.
+[[Go back to looking around the room|TheRoom]]</tw-passagedata><tw-passagedata pid="17" name="Unlock" tags="" position="977,47">The door unlocks and swings open slowly.
 
-It looks like you can [[leave|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="18" name="ControlPanel" tags="" position="555.6666666666666,17.333333333333314">The control panel has a three-digit display and three buttons labeled &quot;0&quot;, &quot;1&quot;, and &quot;2&quot; on them. 
+It looks like you can [[leave|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="18" name="ControlPanel" tags="" position="555,17">The control panel has a three-digit display and three buttons labeled &quot;0&quot;, &quot;1&quot;, and &quot;2&quot; on them. 
 
 [[Press 0|OneRight]]
 [[Press 1|Failure]]
 [[Press 2|Failure]]
 
-[[Give up and go back to looking around|TheRoom]]</tw-passagedata><tw-passagedata pid="19" name="ExamineDesks" tags="" position="66.33333333333331,275.66666666666663">You stare at the desks, which appear to be piled together so that they form two interlocking rings. 
+[[Give up and go back to looking around|TheRoom]]</tw-passagedata><tw-passagedata pid="19" name="ExamineDesks" tags="" position="66,275">You stare at the desks, which appear to be piled together so that they form two interlocking rings. 
 
 You think it [looks familiar]&lt;infinity|
 (click: ?infinity)[&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c8/Infinite.svg&quot; style=&quot;height: 80px; width 80px;&quot;/&gt;
 But what on Earth does that [[mean|TheRoom]]?
 ]
-</tw-passagedata><tw-passagedata pid="20" name="OneRight" tags="" position="623.6666666666666,160.66666666666666">The panel chirps and a 0 appears in the first slot of the digital display.
+</tw-passagedata><tw-passagedata pid="20" name="OneRight" tags="" position="623,160">The panel chirps and a 0 appears in the first slot of the digital display.
 
 [[Press 0|Failure]]
 [[Press 1|TwoRight]]
-[[Press 2|Failure]]</tw-passagedata><tw-passagedata pid="21" name="Failure" tags="" position="778.9999999999999,77.66666666666666">The panel beeps loudly.
+[[Press 2|Failure]]</tw-passagedata><tw-passagedata pid="21" name="Failure" tags="" position="778,77">The panel clucks at you, like an angry chicken.
 (if: $triesPressed &gt; 2)[
-You blew yourself up. 
+You faintly hear a rooster crow, a flash of light comes from the pile of desks and then
 
-Maybe don&#x27;t guess next time, okay?
+...the room exploded. Whoops.
 
 [[Back to the tutorial|Welcome to Twine!]]]
 (else:)[
 	Maybe don&#x27;t do that again. Who knows what might happen?
 	[[Back to entering codes|ControlPanel]]
 ]
-(set: $triesPressed to it + 1)</tw-passagedata><tw-passagedata pid="22" name="TwoRight" tags="" position="537,321.6666666666667">The panel chirps and a numeral 1 appears in the second slot:
+(set: $triesPressed to it + 1)</tw-passagedata><tw-passagedata pid="22" name="TwoRight" tags="" position="537,321">The panel chirps and a numeral 1 appears in the second slot:
 
 [[Press 0|Unlock]]
 [[Press 1|Failure]]
-[[Press 2|Failure]]</tw-passagedata><tw-passagedata pid="23" name="FindEtchings" tags="" position="19.666666666666647,125.99999999999994">You follow in the direction the arrow of pencils is pointing. You step over empty soup cans, torn notebooks, and a shocking number of shoddy drawings of possums to find a clear spot on the ground with an etching on it.
+[[Press 2|Failure]]</tw-passagedata><tw-passagedata pid="23" name="FindEtchings" tags="" position="19,125">You follow in the direction the arrow of pencils is pointing. You step over empty soup cans, torn notebooks, and a shocking number of shoddy drawings of possums to find a clear spot on the ground with an etching on it.
 
 (font: &quot;Skia&quot;)[One step forward, one step back]
 
-What does that [[mean|TheRoom]]?</tw-passagedata><tw-passagedata pid="24" name="Chicken" tags="" position="234.99999999999994,284.3333333333333">A familiar looking chicken is sitting on a very short pedastal of stone, clucking at you.
+What does that [[mean|TheRoom]]?</tw-passagedata><tw-passagedata pid="24" name="Chicken" tags="" position="234,284">A familiar looking chicken is sitting on a very short pedastal of stone, clucking at you.
 
 &lt;img src=&quot;http://i.imgur.com/Y0N8US4.jpg&quot; style=&quot;height: 500px;width: 500px&quot;/&gt;
 (if: not $gotPaper)[
@@ -289,7 +295,7 @@ Hung loosely on its neck is a leather cord with a piece of [paper]&lt;paper| on 
 (set: $gotPaper to true)
 &quot;That seems a bit on point for a clue, really.&quot; you think to yourself. ]]
 
-[[Time to wave bye to the chicken and look for other ways out|TheRoom]]</tw-passagedata><tw-passagedata pid="25" name="PossessionEnding" tags="" position="142.99999999999997,843.3333333333334">You decide to agree to the deal and you quickly type out your reply
+[[Time to wave bye to the chicken and look for other ways out|TheRoom]]</tw-passagedata><tw-passagedata pid="25" name="PossessionEnding" tags="" position="142,843">You decide to agree to the deal and you quickly type out your reply
 $yourText[Sure. Fine. Let&#x27;s do this.]
 
 You feel a pressure in your head and black out for a moment.
@@ -308,7 +314,7 @@ A feeling of shattering.
 
 The last thing you see is your heel.
 
-[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="26" name="IncinerationEnding" tags="" position="204.66666666666666,973.3333333333334">$yourText[Yeah. So.]
+[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="26" name="IncinerationEnding" tags="" position="204,973">$yourText[Yeah. So.]
 $yourText[I&#x27;m not agreeing to anything with a creep texting me]
 $yourText[Especially not to &quot;give up my body&quot;]
 
@@ -316,14 +322,14 @@ $theirText[Then you&#x27;re useless]
 
 For just a moment you can feel the pulsing voltage that fries your nervous system.
 
-[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="27" name="IncantationEnding" tags="" position="488.33333333333337,931.6666666666667">You know what you have to type and how exactly to do it
+[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="27" name="IncantationEnding" tags="" position="488,931">You know what you have to type and how exactly to do it
 $yourText[QRHF RK ZNUPVAN]
 
 Your phone immediately starts sparking and, surprised, you drop it on the floor cracking the case. A liquid like flame oozes out from the edges of the crack and melts the phone entirely.
 
 Well that was weird, but at least you&#x27;re still alive.
 
-[[You survived!?|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="28" name="Contacts" tags="" position="638.3333333333334,683.3333333333334">Your contact list: 
+[[You survived!?|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="28" name="Contacts" tags="" position="638,683">Your contact list: 
 
 	(link-goto: &quot;Uriel&quot;, $urielDestination) $urielUnread[5 unread messages]
     [[Sandalphon]] $sandalphonUnread[2 unread messages]
@@ -335,7 +341,7 @@ Well that was weird, but at least you&#x27;re still alive.
 	Where dynamic links get cool is that you can provide any text as the passage name, **including the value of a variable**. So in this case we want to make sure it looks like your conversation is progressing every time you switch back to talking to Uriel but we want the link, which represents their name in your contacts, to be the same every time.
 	
 	So if you look in the passages where you&#x27;re talking to Uriel, you&#x27;ll see that it keeps updating the variable $urielDestination in order to make sure you go back to the right spot.
-     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="967.6666666666666,1040.3333333333335">$yourText[Okay so this is going to sound wackadoo..]
+     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="967,1040">$yourText[Okay so this is going to sound wackadoo..]
 $yourText[but I think I talked to something not human]
 
 $theirText[...wut? like a chatbot?]
@@ -361,21 +367,21 @@ $theirText[but what&#x27;s it saying?]
 (if: not $sandalphonUnread)[[[Tell them about the messages|Keep talking]]]
 [[Do you give up trying to explain?|DontExplain]]
 [[Back to contacts|Contacts]]
-(set: $urielDestination to &quot;ExplainToUriel&quot;)</tw-passagedata><tw-passagedata pid="30" name="DontExplain" tags="" position="1304.3333333333333,795.3333333333335">You sigh and stare at your phone, knowing that there&#x27;s probably no point in trying to explain.
+(set: $urielDestination to &quot;ExplainToUriel&quot;)</tw-passagedata><tw-passagedata pid="30" name="DontExplain" tags="" position="1304,795">You sigh and stare at your phone, knowing that there&#x27;s probably no point in trying to explain.
 
 $yourText[It doesn&#x27;t even matter]
 
 Nothing left for you to do here
 
 [[Back to contacts|Contacts]]
-(set: $urielDestination to &quot;Hopeless&quot;)</tw-passagedata><tw-passagedata pid="31" name="Keep talking" tags="" position="896,1267.0000000000002">$yourText[It wants to make a deal]
+(set: $urielDestination to &quot;Hopeless&quot;)</tw-passagedata><tw-passagedata pid="31" name="Keep talking" tags="" position="896,1267">$yourText[It wants to make a deal]
 $yourText[I think it wants my body]
 
 $theirText[sick]
 
 $yourText[No like possession]
 
-$theirText[why, though?]
+$theirText[why though?]
 
 $yourText[I REALLY DON&#x27;T WANT TO ASK OKAY]
 
@@ -386,9 +392,9 @@ $theirText[okay so what do we do?]
 [[Ask them to check their extensive library on occultic practices|LearnMagic]]
 
 [[Back to contacts|Contacts]]
-(set: $urielDestination to &quot;Keep talking&quot;)</tw-passagedata><tw-passagedata pid="32" name="Hopeless" tags="" position="1196.6666666666665,942.5">You stare at your phone knowing that there&#x27;s no point in trying to say anything.
+(set: $urielDestination to &quot;Keep talking&quot;)</tw-passagedata><tw-passagedata pid="32" name="Hopeless" tags="" position="1196,942">You stare at your phone knowing that there&#x27;s no point in trying to say anything.
 
-[[Back to contacts|Contacts]]</tw-passagedata><tw-passagedata pid="33" name="BetrayalEnding" tags="" position="612.6666666666667,1272">Maybe you&#x27;re just being silly and taking all of this too seriously. Maybe Uriel can help you feel safer.
+[[Back to contacts|Contacts]]</tw-passagedata><tw-passagedata pid="33" name="BetrayalEnding" tags="" position="612,1272">Maybe you&#x27;re just being silly and taking all of this too seriously. Maybe Uriel can help you feel safer.
 
 $yourText[Look why don&#x27;t you talk to them? The number is xxx-xxx-xxxx. Maybe this is just a prank after all?]
 
@@ -400,7 +406,7 @@ $theirText[Behold I am born into this world and am made manifest]
 
 That&#x27;s when you noticed that reality was melting.
 
-[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="34" name="LearnMagic" tags="" position="1209.3333333333333,1308.6666666666667">$yourText[Don&#x27;t you know anything that could help me?]
+[[Game Over|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="34" name="LearnMagic" tags="" position="1209,1308">$yourText[Don&#x27;t you know anything that could help me?]
 
 $theirText[Sure just a sec]
 
@@ -418,7 +424,7 @@ You better try this fast
 [[Back to contacts|Contacts]]
 
 (set: $knowsTheIncantation to true)
-(set: $urielDestination to &quot;LearnMagic&quot;)</tw-passagedata><tw-passagedata pid="35" name="ProgIntro" tags="" position="1719.9999999999998,889.3333333333334">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="ProgTutorial" tags="" position="1480,687.6666666666667">So we can&#x27;t really explain how **all** of programming in Harlowe works in this tutorial, but we&#x27;ll try to cover a few very basic concepts that will help you get started.
+(set: $urielDestination to &quot;LearnMagic&quot;)</tw-passagedata><tw-passagedata pid="35" name="ProgIntro" tags="" position="1719,889">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="ProgTutorial" tags="" position="2016.6666666666667,925.3333333333334">So we can&#x27;t really explain how **all** of programming in Harlowe works in this tutorial, but we&#x27;ll try to cover a few very basic concepts that will help you get started.
 
 First, there&#x27;s the concept of the **macro**. Macros in Harlowe might be called &quot;expression&quot; or &quot;statements&quot; in other programming concepts. They&#x27;re essentially commands that *do* or *calculate* something.
 
@@ -432,7 +438,100 @@ So in the puzzle room game we want to store how many times the player has tried 
 &#x60;(set: $timesPressed to 0)&#x60;
 Variable names have to start with a dollar sign.
 
-We can then increment </tw-passagedata></tw-storydata>
+We can then increment </tw-passagedata><tw-passagedata pid="37" name="Tutorials" tags="" position="1997.6666666666667,149.33333333333331">Welcome to the tutorials section! If you want an interactive way to learn more about advanced topics, here&#x27;s your stop!
+
+[[I want the game to remember I&#x27;ve been to a room/had a conversation/etc.|Variables]]
+[[I want my text to look different|Styling]]
+[[Can links do something other than open passages?|Hooks]]
+
+[[Nah, I&#x27;m good|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="38" name="Variables" tags="" position="1884.3333333333335,364.3333333333333">So you want to make your game remember that the player has had a conversation before or has been to a room before or basically *anything* where the player leaves some kind of permanent *effect* on the world of the game?
+
+Well, the big concepts you need are **variables** and **conditionals**.
+
+First, we&#x27;ll talk about variables. These show up in basically every programming language ever! They&#x27;re like containers for information, keeping track of things your game needs to remember. You can think of them like labeled boxes that you can put things into and take them back out again. 
+
+You can make a variable like this:
+&#x60;(set: $thisIsTheName to 0)&#x60; (set: $thisIsTheName to 0)
+In other words, you make variables just by putting a value in them. Twine itself will go ahead and make the box for you stick something in it. You can actually name a variable whatever you want, but it **must** start with a $ or else Twine doesn&#x27;t know it&#x27;s supposed to be a variable.
+
+You can change what you&#x27;ve put in the variable even after it&#x27;s been made the same way.
+&#x60;(set: $thisIsTheName to 1)&#x60; (set: $thisIsTheName to 1)
+
+Now how do you *use* a variable? Just call its name! So for example, here&#x27;s a line of code that adds 1 to the variable &#x60;$thisIsTheName&#x60;:
+
+&#x60;(set: $thisIsTheName to $thisIsTheName + 1)&#x60; (set: $thisIsTheName to $thisIsTheName + 1)
+
+You can even call variables right in the middle of a passage so you can do something say something like &#x60;$thisIsTheName&#x60; and then you would see the number 2 appear in the text. In this passage, I&#x27;ve actually been running the code you&#x27;ve been looking at which means I can call the variable as so $thisIsTheName
+
+Okay, but how do we use them to control how our games play? Well, most of the time you&#x27;re going to need to make some kind of choice!
+
+Like a lot of programming languages the way you make a choice in Twine is to say &quot;if&quot; and then what you&#x27;re testing. So for example if I type
+
+&#x60;(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if &#x60;$thisIsTheName&#x60; is bigger than 1][Here&#x27;s the text that should show up if it isn&#x27;t]&#x60;
+
+what&#x27;ll show up in our passage is:
+{(if: $thisIsTheName &gt; 1)[Here&#x27;s the text that should show up if &#x60;$thisIsTheName&#x60; is bigger than 1][Here&#x27;s the text that should show up if it isn&#x27;t]}
+
+There&#x27;s a lot more to cover about variables and conditionals, but hopefully that was enough to at least get you started!
+
+[[Back|Tutorials]]</tw-passagedata><tw-passagedata pid="39" name="Styling" tags="" position="2034.3333333333335,364.3333333333333">So if you play through some of the games included in this tutorial, you might notice that there&#x27;s a number of times the text looks different than others: different fonts, different colors, etc.
+
+There&#x27;s actually a bunch of built-in Twine commands to easily change the way the text looks! Not even just the text but everything else about the passages too.
+
+You can directly change the properties of text like so
+&#x60;(font: &#x27;Courier New&#x27;)[Here&#x27;s some text in an old fashioned font.]&#x60;
+which actually looks like:
+(font: &#x27;Courier New&#x27;)[Here&#x27;s some text in an old fashioned font.]
+
+You can also change the colors like 
+&#x60;(colour: red)[This text should be pretty red]&#x60;
+which will look like:
+(colour: red)[This text should be pretty red]
+
+Now, typing that much text is a pain if you&#x27;re going to be styling something like a narrator or different characters in a dialogue. The cool thing is that you can actually store your formatting of choice in a variable to make it easier to use. So here&#x27;s an excerpt from one of the games in the tutorial:
+
+&#x60;
+	(set: $textFont to (font: &#x27;Courier New&#x27;))
+	(set: $yourText to (background: blue) + $textFont)
+	(set: $theirText to (background: green) + $textFont)&#x60;
+{	(set: $textFont to (font: &#x27;Courier New&#x27;))
+	(set: $yourText to (background: blue) + $textFont)
+	(set: $theirText to (background: green) + $textFont)}
+	which then can be used like &#x60;$yourText[Hey there!]&#x60;
+	which is going to look like: $yourText[Hey there!]
+Of course, there&#x27;s a lot more you can do than just changing fonts and colors. There&#x27;s a whole mess of effects you can use to modify the way your story looks!
+
+For example, there&#x27;s transformations like 
+&#x60;(text-style: &quot;mirror&quot;)[This text is going to be backwards]&#x60;
+which will look like
+(text-style: &quot;mirror&quot;)[This text is going to be backwards]
+or 
+&#x60;(text-style: &quot;smear&quot;)[This is going to look weird]&#x60;
+which will look like
+(text-style: &quot;smear&quot;)[This is going to look weird]
+
+You can mix and match these and even do other cool things like changing the appearance of every single instance of a word with the &#x60;enchant&#x60; command, like this
+&#x60;(enchant: &quot;dog&quot;, (colour: magenta))&#x60; (enchant: &quot;dog&quot;, (colour: magenta))
+which has the effect of making all the instances of the word dog be magenta without you having to type anything else. Dog is a good word, right? Notice, though, that this only works for the literal word dog and not Dog or DOG or dogs?
+
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="40" name="Hooks" tags="" position="2187.666666666667,354.3333333333333">One thing you might be wondering is how we can make &quot;links&quot; that do more interesting things when you click on them. 
+
+There&#x27;s a number of commands that can help out with that, but we&#x27;ll need to talk more about *hooks*. We&#x27;ve been using hooks for awhile now. A hook is technically just &#x60;[some text inside of square brackets]&#x60;. In the last tutorial we were styling them, but we can do other things with them too.
+
+We can actually give *names* to hooks that we can reference later in the same passage so that that [something can happen up here]&lt;tada|
+
+(click: ?tada)[and then affect things down here]
+
+That effect was done by the following code
+&#x60;[something can happen up here]&lt;tada|
+
+(click: ?tada)[and then affect things down here]&#x60;
+
+So the part &#x60;&lt;tada|&#x60; is the name we gave the hook &#x60;[something can happen up here]&#x60;. If you looked at the first tutorial and saw the way we used variables started with a $, similarly the names for **hooks** start with a ? whenever you want to use them.
+
+In this case, we just used the &#x60;click&#x60; command to make somthing happen when &#x60;?tada&#x60; was clicked on. In this case, it was just to have text appear but there&#x27;s a **ton** of things that you can do with named hooks and the documentation we linked to in [[Welcome to Twine!]] explains all the different things you can do with them and the kinds of commands you can run by interacting with text.
+
+[[Back to the list|Tutorials]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
