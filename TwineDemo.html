@@ -443,6 +443,7 @@ We can then increment </tw-passagedata><tw-passagedata pid="37" name="Tutorials"
 [[I want the game to remember I&#x27;ve been to a room/had a conversation/etc.|Variables]]
 [[I want my text to look different|Styling]]
 [[Can links do something other than open passages?|Hooks]]
+[[I want to have background images and change the way passages work.|CSS]]
 
 [[Nah, I&#x27;m good|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="38" name="Variables" tags="" position="1884.3333333333335,364.3333333333333">So you want to make your game remember that the player has had a conversation before or has been to a room before or basically *anything* where the player leaves some kind of permanent *effect* on the world of the game?
 
@@ -531,7 +532,52 @@ So the part &#x60;&lt;tada|&#x60; is the name we gave the hook &#x60;[something 
 
 In this case, we just used the &#x60;click&#x60; command to make somthing happen when &#x60;?tada&#x60; was clicked on. In this case, it was just to have text appear but there&#x27;s a **ton** of things that you can do with named hooks and the documentation we linked to in [[Welcome to Twine!]] explains all the different things you can do with them and the kinds of commands you can run by interacting with text.
 
-[[Back to the list|Tutorials]]</tw-passagedata></tw-storydata>
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="41" name="CSS" tags="" position="2399.3333333333335,336">Okay so you probably want to mess around with how your background looks and do things like include background images. 
+
+You can do that without *too* much trouble by using built in commands. So, for example, we can set a background image like
+
+&#x60;(enchant: ?passage, (background: &quot;http://www.publicdomainpictures.net/pictures/30000/velka/water-background-5.jpg&quot;))&#x60;
+
+which we can see in [[this page|ImageBackground]]
+
+How did this work? Well there&#x27;s a few pieces here.
+
+First, there&#x27;s the &#x60;enchant&#x60; command that we&#x27;re using to enchant a *hook* rather than just a particular word. The second part is that we&#x27;re using a very **special** hook called &#x60;?passage&#x60; that refers to the entirety of the passage. There&#x27;s other special hooks that Twine gives us to modify the way the entire page looks, the way the sidebar looks, and the way links look. 
+
+So if we type something like
+&#x60;(enchant: ?page, (background: red))&#x60;
+we&#x27;ll make the entire page red which is exactly what we do in [[this example|RedBackground]].
+
+You can use the &#x60;enchant&#x60; command with a number of other &quot;changers&quot;, which is what things like &#x60;background&#x60; or &#x60;text-colour&#x60; are called in the Twine documentation. 
+
+If you know a little CSS, *Cascading Style Sheets*, then you can do even more neat stuff. CSS is the tool built into every browser to that allows you web designers to customize how their pages look! You can use the &#x60;css&#x60; command to create custom *changers* with CSS code. You don&#x27;t have to do this and you&#x27;re not really missing out if you **don&#x27;t** know CSS, but if it&#x27;s something you&#x27;ve already learned there&#x27;s extra fun things you can change about how your game looks. 
+
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="42" name="ImageBackground" tags="" position="2647.666666666667,539.3333333333334">(enchant: ?passage, (background: &quot;http://www.publicdomainpictures.net/pictures/30000/velka/water-background-5.jpg&quot;))
+
+Here we have some text and other things
+
+just to take up room
+
+but you should be able to see
+
+the background image load
+
+since we&#x27;re fetching it over the internet, it&#x27;s taking a moment for it to work
+
+[[Back to styling tutorial|CSS]]</tw-passagedata><tw-passagedata pid="43" name="RedBackground" tags="" position="2192.666666666667,572.6666666666667">(enchant: ?page, (background: red))
+
+okay and again
+
+we&#x27;ll have some filler text
+
+that&#x27;s going to be able to 
+
+make the passage big enough 
+
+
+that you can see what&#x27;s happening
+
+[[Back to styling|CSS]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
