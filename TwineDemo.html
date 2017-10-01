@@ -90,7 +90,7 @@ Even this entire story was styled with a bit of CSS. If you want to see more abo
 Back to the start! [[Welcome to Twine!]] </tw-passagedata><tw-passagedata pid="4" name="ConvoGame" tags="" position="836,599">At the end of the strangest day of your life, you pull out your phone and check your texts:
 
 	[[Uriel]] 5 unread messages
-	[[Sandalphon]] 2 unread messages
+	[[Unknown Number]] 2 unread messages
 	[[Gabriel]] 1 unread message
 {
 &lt;!-- Hi! So the main concepts that this game demonstrates are
@@ -213,7 +213,7 @@ You awkwardly wait a moment staring at the still-blocked exit before Samael real
 
 (colour: &quot;red&quot;)[&quot;Right! Let me just get out of your way&quot;]
 
-[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Sandalphon" tags="" position="347.3333333333333,676">$theirText[Do we have a deal or not?]
+[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Unknown Number" tags="" position="347.3333333333333,676">$theirText[Do we have a deal or not?]
 $theirText[Make your decision]
 
 Well this isn&#x27;t going to be good. Maybe you should figure out a plan before you text this creep back.
@@ -332,16 +332,16 @@ Well that was weird, but at least you&#x27;re still alive.
 [[You survived!?|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="28" name="Contacts" tags="" position="638,683">Your contact list: 
 
 	(link-goto: &quot;Uriel&quot;, $urielDestination) $urielUnread[5 unread messages]
-    [[Sandalphon]] $sandalphonUnread[2 unread messages]
+    [[Unknown Number]] $sandalphonUnread[2 unread messages]
 	[[Gabriel]] $gabrielUnread[1 unread message]
 
 {&lt;!-- So in this passage we have probably the most interesting part of the entire thing. Dynamic links!
-    Now normally something like (link-goto: &quot;Sandalphon&quot;) does the exact same thing as [[Sandalphon]] and (link-goto: &quot;Back&quot;, &quot;Contacts&quot;) does the same thing as [[Back|Contacts]]. 
+    Now normally something like (link-goto: &quot;Unknown Number&quot;) does the exact same thing as [[Unknown Number]] and (link-goto: &quot;Back&quot;, &quot;Contacts&quot;) does the same thing as [[Back|Contacts]]. 
 	
 	Where dynamic links get cool is that you can provide any text as the passage name, **including the value of a variable**. So in this case we want to make sure it looks like your conversation is progressing every time you switch back to talking to Uriel but we want the link, which represents their name in your contacts, to be the same every time.
 	
 	So if you look in the passages where you&#x27;re talking to Uriel, you&#x27;ll see that it keeps updating the variable $urielDestination in order to make sure you go back to the right spot.
-     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="967,1040">$yourText[Okay so this is going to sound wackadoo..]
+     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="928.6666666666666,1043.3333333333333">$yourText[Okay so this is going to sound wackadoo..]
 $yourText[but I think I talked to something not human]
 
 $theirText[...wut? like a chatbot?]
@@ -365,6 +365,7 @@ $theirText[yeah you do sound wack]
 $theirText[but what&#x27;s it saying?]
 
 (if: not $sandalphonUnread)[[[Tell them about the messages|Keep talking]]]
+(if: $sandalphonUnread)[[[Do you go check the messages?|Contacts]]]
 [[Do you give up trying to explain?|DontExplain]]
 [[Back to contacts|Contacts]]
 (set: $urielDestination to &quot;ExplainToUriel&quot;)</tw-passagedata><tw-passagedata pid="30" name="DontExplain" tags="" position="1304,795">You sigh and stare at your phone, knowing that there&#x27;s probably no point in trying to explain.
