@@ -38,7 +38,15 @@ tw-passage {
 
 
 
+
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+
 
 
 
@@ -63,7 +71,8 @@ the Harlowe documentation at [https://twine2.neocities.org]&lt;harlowe| but we a
 (click: ?harlowe)[(open-url: &quot;https://twine2.neocities.org&quot;)]
 (set: $notBeenRight to true)
 (set: $notTalkedToSamael to true)
-(set: $bottleFilled to false)}</tw-passagedata><tw-passagedata pid="2" name="FirstLink" tags="" position="1024,517">Here&#x27;s a new passage! As you can see, the old text we were looking at is gone. 
+(set: $bottleFilled to false)
+}</tw-passagedata><tw-passagedata pid="2" name="FirstLink" tags="" position="1024,517">Here&#x27;s a new passage! As you can see, the old text we were looking at is gone. 
 
 We got here by a //link//, that looked like &#x60;[[like this|FirstLink]]&#x60;, which lead to this passage called &quot;FirstLink&quot; while displaying the text &quot;like this&quot;. That&#x27;s actually the majority of everything you need to know to make Twine work! By making links to passages that don&#x27;t exist yet, Twine will **create** passages for you. 
 
@@ -213,7 +222,7 @@ You awkwardly wait a moment staring at the still-blocked exit before Samael real
 
 (colour: &quot;red&quot;)[&quot;Right! Let me just get out of your way&quot;]
 
-[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Unknown Number" tags="" position="347.3333333333333,676">$theirText[Do we have a deal or not?]
+[[Your way back to the tutorial is clear|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="12" name="Unknown Number" tags="" position="347,676">$theirText[Do we have a deal or not?]
 $theirText[Make your decision]
 
 Well this isn&#x27;t going to be good. Maybe you should figure out a plan before you text this creep back.
@@ -341,7 +350,7 @@ Well that was weird, but at least you&#x27;re still alive.
 	Where dynamic links get cool is that you can provide any text as the passage name, **including the value of a variable**. So in this case we want to make sure it looks like your conversation is progressing every time you switch back to talking to Uriel but we want the link, which represents their name in your contacts, to be the same every time.
 	
 	So if you look in the passages where you&#x27;re talking to Uriel, you&#x27;ll see that it keeps updating the variable $urielDestination in order to make sure you go back to the right spot.
-     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="928.6666666666666,1043.3333333333333">$yourText[Okay so this is going to sound wackadoo..]
+     --&gt;}</tw-passagedata><tw-passagedata pid="29" name="ExplainToUriel" tags="" position="928,1043">$yourText[Okay so this is going to sound wackadoo..]
 $yourText[but I think I talked to something not human]
 
 $theirText[...wut? like a chatbot?]
@@ -425,7 +434,7 @@ You better try this fast
 [[Back to contacts|Contacts]]
 
 (set: $knowsTheIncantation to true)
-(set: $urielDestination to &quot;LearnMagic&quot;)</tw-passagedata><tw-passagedata pid="35" name="ProgIntro" tags="" position="1719,889">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="ProgTutorial" tags="" position="2016.6666666666667,925.3333333333334">So we can&#x27;t really explain how **all** of programming in Harlowe works in this tutorial, but we&#x27;ll try to cover a few very basic concepts that will help you get started.
+(set: $urielDestination to &quot;LearnMagic&quot;)</tw-passagedata><tw-passagedata pid="35" name="ProgIntro" tags="" position="1719,889">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="ProgTutorial" tags="" position="2016,925">So we can&#x27;t really explain how **all** of programming in Harlowe works in this tutorial, but we&#x27;ll try to cover a few very basic concepts that will help you get started.
 
 First, there&#x27;s the concept of the **macro**. Macros in Harlowe might be called &quot;expression&quot; or &quot;statements&quot; in other programming concepts. They&#x27;re essentially commands that *do* or *calculate* something.
 
@@ -439,14 +448,21 @@ So in the puzzle room game we want to store how many times the player has tried 
 &#x60;(set: $timesPressed to 0)&#x60;
 Variable names have to start with a dollar sign.
 
-We can then increment </tw-passagedata><tw-passagedata pid="37" name="Tutorials" tags="" position="1997.6666666666667,149.33333333333331">Welcome to the tutorials section! If you want an interactive way to learn more about advanced topics, here&#x27;s your stop!
+We can then increment </tw-passagedata><tw-passagedata pid="37" name="Tutorials" tags="" position="1997,149">Welcome to the tutorials section! If you want an interactive way to learn more about advanced topics, here&#x27;s your stop!
 
 [[I want the game to remember I&#x27;ve been to a room/had a conversation/etc.|Variables]]
+
 [[I want my text to look different|Styling]]
+
+[[I want custom fonts!|Fonts]]
+
 [[Can links do something other than open passages?|Hooks]]
+
 [[I want to have background images and change the way passages work.|CSS]]
 
-[[Nah, I&#x27;m good|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="38" name="Variables" tags="" position="1884.3333333333335,364.3333333333333">So you want to make your game remember that the player has had a conversation before or has been to a room before or basically *anything* where the player leaves some kind of permanent *effect* on the world of the game?
+[[I want to include images|Images]]
+
+[[Nah, I&#x27;m good|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="38" name="Variables" tags="" position="1884,364">So you want to make your game remember that the player has had a conversation before or has been to a room before or basically *anything* where the player leaves some kind of permanent *effect* on the world of the game?
 
 Well, the big concepts you need are **variables** and **conditionals**.
 
@@ -476,7 +492,7 @@ what&#x27;ll show up in our passage is:
 
 There&#x27;s a lot more to cover about variables and conditionals, but hopefully that was enough to at least get you started!
 
-[[Back|Tutorials]]</tw-passagedata><tw-passagedata pid="39" name="Styling" tags="" position="2034.3333333333335,364.3333333333333">So if you play through some of the games included in this tutorial, you might notice that there&#x27;s a number of times the text looks different than others: different fonts, different colors, etc.
+[[Back|Tutorials]]</tw-passagedata><tw-passagedata pid="39" name="Styling" tags="" position="2034,364">So if you play through some of the games included in this tutorial, you might notice that there&#x27;s a number of times the text looks different than others: different fonts, different colors, etc.
 
 There&#x27;s actually a bunch of built-in Twine commands to easily change the way the text looks! Not even just the text but everything else about the passages too.
 
@@ -516,7 +532,7 @@ You can mix and match these and even do other cool things like changing the appe
 &#x60;(enchant: &quot;dog&quot;, (colour: magenta))&#x60; (enchant: &quot;dog&quot;, (colour: magenta))
 which has the effect of making all the instances of the word dog be magenta without you having to type anything else. Dog is a good word, right? Notice, though, that this only works for the literal word dog and not Dog or DOG or dogs?
 
-[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="40" name="Hooks" tags="" position="2187.666666666667,354.3333333333333">One thing you might be wondering is how we can make &quot;links&quot; that do more interesting things when you click on them. 
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="40" name="Hooks" tags="" position="2187,354">One thing you might be wondering is how we can make &quot;links&quot; that do more interesting things when you click on them. 
 
 There&#x27;s a number of commands that can help out with that, but we&#x27;ll need to talk more about *hooks*. We&#x27;ve been using hooks for awhile now. A hook is technically just &#x60;[some text inside of square brackets]&#x60;. In the last tutorial we were styling them, but we can do other things with them too.
 
@@ -533,7 +549,7 @@ So the part &#x60;&lt;tada|&#x60; is the name we gave the hook &#x60;[something 
 
 In this case, we just used the &#x60;click&#x60; command to make somthing happen when &#x60;?tada&#x60; was clicked on. In this case, it was just to have text appear but there&#x27;s a **ton** of things that you can do with named hooks and the documentation we linked to in [[Welcome to Twine!]] explains all the different things you can do with them and the kinds of commands you can run by interacting with text.
 
-[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="41" name="CSS" tags="" position="2399.3333333333335,336">Okay so you probably want to mess around with how your background looks and do things like include background images. 
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="41" name="CSS" tags="" position="2399,336">Okay so you probably want to mess around with how your background looks and do things like include background images. 
 
 You can do that without *too* much trouble by using built in commands. So, for example, we can set a background image like
 
@@ -553,7 +569,7 @@ You can use the &#x60;enchant&#x60; command with a number of other &quot;changer
 
 If you know a little CSS, *Cascading Style Sheets*, then you can do even more neat stuff. CSS is the tool built into every browser to that allows you web designers to customize how their pages look! You can use the &#x60;css&#x60; command to create custom *changers* with CSS code. You don&#x27;t have to do this and you&#x27;re not really missing out if you **don&#x27;t** know CSS, but if it&#x27;s something you&#x27;ve already learned there&#x27;s extra fun things you can change about how your game looks. 
 
-[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="42" name="ImageBackground" tags="" position="2647.666666666667,539.3333333333334">(enchant: ?passage, (background: &quot;http://www.publicdomainpictures.net/pictures/30000/velka/water-background-5.jpg&quot;))
+[[Back to the list|Tutorials]]</tw-passagedata><tw-passagedata pid="42" name="ImageBackground" tags="" position="2647,539">(enchant: ?passage, (background: &quot;http://www.publicdomainpictures.net/pictures/30000/velka/water-background-5.jpg&quot;))
 
 Here we have some text and other things
 
@@ -565,7 +581,7 @@ the background image load
 
 since we&#x27;re fetching it over the internet, it&#x27;s taking a moment for it to work
 
-[[Back to styling tutorial|CSS]]</tw-passagedata><tw-passagedata pid="43" name="RedBackground" tags="" position="2192.666666666667,572.6666666666667">(enchant: ?page, (background: red))
+[[Back to styling tutorial|CSS]]</tw-passagedata><tw-passagedata pid="43" name="RedBackground" tags="" position="2351,540">(enchant: ?page, (background: red))
 
 okay and again
 
@@ -578,7 +594,46 @@ make the passage big enough
 
 that you can see what&#x27;s happening
 
-[[Back to styling|CSS]]</tw-passagedata></tw-storydata>
+[[Back to styling|CSS]]</tw-passagedata><tw-passagedata pid="44" name="Images" tags="" position="2575,177">In order to break up the text of you game and keep it visually interesting, you might want to include *images* in your story.
+
+The easiest way to do this, I think, is by including actual HTML into your story.
+
+If you don&#x27;t know what HTML is, it&#x27;s the underlying language that tells your web browser what exactly goes into a web page. 
+
+HTML is its own big topic too large to cover here, but fortunately all you need is the &#x60;&lt;img&gt;&#x60; tag. The way you use it is something like
+&#x60;&lt;img src=&quot;http://bit.ly/2h9gSHn&quot;&gt;&#x60;
+which will look like
+&lt;img src=&quot;http://bit.ly/2h9gSHn&quot;&gt;
+
+One caveat to note: you need the link to the *image* and not just the search result page. Make sure your URL ends in something like .png or .jpg or some other image format. 
+
+Also! Animated gifs do work in Twine
+&lt;img src=&quot;https://media.giphy.com/media/aWRWTF27ilPzy/giphy.gif&quot;&gt;
+
+if you want to make some small animations!
+
+[[Back to tutorials|Tutorials]]</tw-passagedata><tw-passagedata pid="45" name="Fonts" tags="" position="1942,595">Actually using different fonts is enough its own topic that I wanted to separate it out from other text effects.
+
+Now if you want to change the font to something that&#x27;s pretty standard across the web then all you need to do is type something like
+&#x60;(font: &quot;Courier&quot;)[And the text is going to look different!]&#x60;
+
+(font: &quot;Courier&quot;)[And the text is going to look different!]
+
+The problem is that, in general, if you want some super cool looking font you&#x27;re going to have to do some setup work to make sure that the player&#x27;s browser has the right fonts loaded. 
+
+I think the easiest way to do this is to use Google fonts
+(click: &quot;Google fonts&quot;)[(open-url: &quot;http://fonts.google.com&quot;)]
+From here you can click on the little plus sign of any font that you think looks cool. Once you have you should see at the bottom of your browser a little note about &quot;# Family Selected&quot;. If you click on *that* you should see some text explaining how to use the font. So I selected the &#x60;Lobster&#x60; font, which means that Google tells me I need to load the font like
+&#x60;&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot;&gt;&#x60;
+
+Now! You need to make a new passage, it&#x27;s actual name doesn&#x27;t matter, but you&#x27;re going to click on the thing that says &#x60;tag&#x60; and give it a tag of &#x60;header&#x60;. When a passage has the &#x60;header&#x60; tag it means that it&#x27;ll silently load at the beginning of every passage before the &quot;real&quot; passage you&#x27;re on. Go ahead and copy and paste the link you got from Google into your &#x60;header&#x60; passage, then in any passage you should be able to use the font like normal.
+
+In our case we type
+&#x60;(font: &quot;Lobster&quot;)[a bunch of stuff and it should look super different]&#x60;
+and it&#x27;ll look like
+(font: &quot;Lobster&quot;)[a bunch of stuff and it should look super different]
+
+[[Back to tutorials|Tutorials]]</tw-passagedata><tw-passagedata pid="46" name="Puppppper" tags="header" position="1726,401.5">{&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot;&gt;}</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
