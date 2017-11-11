@@ -42,7 +42,9 @@ tw-passage {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -58,14 +60,17 @@ The basic building block of Twine is the ability to connect one scene, or //pass
 
 A cool thing about Twine is that ultimately it just creates web pages, which means that once you&#x27;re done with your stories they can be viewed on any device! 
 
+If you want to learn more about programming in Twine, you&#x27;ll want to look at
+the Harlowe documentation at [https://twine2.neocities.org]&lt;harlowe| as well as the tutorials and how-tos found [[here|Tutorials]].
+
+If you want to see some examples of Twine games, we have a few different styles of game below.
+
 First, here&#x27;s a simple [[adventure|AdventureGame]] game where you have to walk around a set of caves and solve a tiny puzzle.
 
 Next we have a [[puzzle game|PuzzleGame]] inspired by very loosely by escape rooms, where you need to find clues so you can break the code to the door that&#x27;s trapped you in an odd chicken themed room.
 
 Finally, we have a conversation based game that&#x27;s centered around texting a friend to get out of a [[dangerous situation|ConvoGame]].
 
-In order to learn more about programming in Twine, you&#x27;ll want to look at
-the Harlowe documentation at [https://twine2.neocities.org]&lt;harlowe| but we also have comments in the source code for each of the games in this tutorial and we also have a couple of small tutorials on some of the concepts used in the games themselves [[here|Tutorials]].
 {
 (click: ?earl)[(open-url: &quot;http://twinery.org&quot;)]
 (click: ?harlowe)[(open-url: &quot;https://twine2.neocities.org&quot;)]
@@ -462,6 +467,8 @@ We can then increment </tw-passagedata><tw-passagedata pid="37" name="Tutorials"
 
 [[I want to include images|Images]]
 
+[[I want my passage to react with time| Time]]
+
 [[Nah, I&#x27;m good|Welcome to Twine!]]</tw-passagedata><tw-passagedata pid="38" name="Variables" tags="" position="1884,364">So you want to make your game remember that the player has had a conversation before or has been to a room before or basically *anything* where the player leaves some kind of permanent *effect* on the world of the game?
 
 Well, the big concepts you need are **variables** and **conditionals**.
@@ -633,7 +640,28 @@ In our case we type
 and it&#x27;ll look like
 (font: &quot;Lobster&quot;)[a bunch of stuff and it should look super different]
 
-[[Back to tutorials|Tutorials]]</tw-passagedata><tw-passagedata pid="46" name="Puppppper" tags="header" position="1726,401.5">{&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot;&gt;}</tw-passagedata></tw-storydata>
+[[Back to tutorials|Tutorials]]</tw-passagedata><tw-passagedata pid="46" name="Puppppper" tags="header" position="1726,401">{&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot;&gt;}</tw-passagedata><tw-passagedata pid="47" name=" Time" tags="" position="2178,667">So another cool thing you can do in Twine is have your passages run code that continuously updates over time. This allows you to do things like give timed choices or force delays before new details are revealed.
+
+The key is the &#x60;live&#x60; macro. You can use &#x60;live&#x60; to write code that will re-run over and over again as long as the player is on the passage.
+
+So, for example, if you typed 
+&#x60;(live: 1s)[
+(set: $someVariable to $someVariable + 1)
+$someVariable)]&#x60;
+You&#x27;d see a number that keeps changing roughly once a second.
+{
+(live: 1s)[
+(set: $someVariable to $someVariable + 1)
+$someVariable]}
+
+You can use this to do all sorts of cute things, like the following code that will display something only after roughly fifteen seconds. Just wait a bit for it!
+&#x60;(live: 1s)[
+  (set: $ourTimer to $ourTimer + 1)
+  (if: $ourTimer &gt; 15)[This message should only appear after fifteen seconds]]&#x60;
+  
+{(live: 1s)[
+  (set: $ourTimer to $ourTimer + 1)
+  (if: $ourTimer &gt; 15)[This message should only appear after fifteen seconds]]}</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
